@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/trichner/oauthflows"
-	vault2 "github.com/trichner/toolbox/pkg/vault"
+	vault2 "github.com/trichner/tb/pkg/vault"
 )
 
 func describeMatter(matterId string) error {

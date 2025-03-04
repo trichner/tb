@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	credentials2 "github.com/trichner/toolbox/pkg/jira/credentials"
+	credentials2 "github.com/trichner/tb/pkg/jira/credentials"
 )
 
 func TestNewJiraService(t *testing.T) {

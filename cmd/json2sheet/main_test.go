@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/trichner/toolbox/pkg/json2sheet"
+	"github.com/trichner/tb/pkg/json2sheet"
 )
 
 func TestExec(t *testing.T) {

@@ -3,9 +3,12 @@ package sheets
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"net/http"
+	"strings"
 
-	"github.com/trichner/toolbox/pkg/oauth2keystore"
+	"github.com/trichner/tb/pkg/oauth2tokenstore"
+
 	"golang.org/x/oauth2"
 
 	"github.com/trichner/oauthflows"
@@ -59,7 +62,8 @@ func NewSheetService(ctx context.Context) (SheetsService, error) {
 
 	if client, err = google.DefaultClient(ctx, scopes...); err == nil {
 		// client already set
-	} else if client, err = oauthflows.NewClient(oauthflows.WithConfig(oauthConfig), oauthflows.WithTokenStore(oauth2keystore.NewKeyringTokenStore(keyringItemServiceName))); err == nil {
+		slog.Warn("using default client, use 'gcloud auth application-default revoke' to setup new credentials or make sure to use the correct scopes", "scopes", strings.Join(scopes, ", "))
+	} else if client, err = oauthflows.NewClient(oauthflows.WithConfig(oauthConfig), oauthflows.WithTokenStore(oauth2tokenstore.NewKeyringTokenStore(keyringItemServiceName))); err == nil {
 		// client already set
 	} else {
 		return nil, fmt.Errorf("cannot initialize oauth client: %w", err)

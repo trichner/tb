@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/trichner/toolbox/pkg/jsontree/ast"
-	"github.com/trichner/toolbox/pkg/jsontree/lexer"
+	"github.com/trichner/tb/pkg/jsontree/ast"
+	"github.com/trichner/tb/pkg/jsontree/lexer"
 )
 
 func Parse(l lexer.Lexer) (ast.Node, error) {

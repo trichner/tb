@@ -136,7 +136,6 @@ func (s *sheetOps) AppendValues(data [][]string) error {
 		ValueInputOption("RAW").
 		InsertDataOption("INSERT_ROWS").
 		Do()
-
 	if err != nil {
 		return fmt.Errorf("unable to append data, spreadsheet='%s' sheetId='%d': %w", s.spreadsheetId(), s.sheetId, err)
 	}

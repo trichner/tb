@@ -9,8 +9,8 @@ import (
 	"strings"
 
 	"github.com/alecthomas/kong"
-	"github.com/trichner/toolbox/pkg/jira"
-	"github.com/trichner/toolbox/pkg/jira/credentials"
+	"github.com/trichner/tb/pkg/jira"
+	"github.com/trichner/tb/pkg/jira/credentials"
 )
 
 var cli struct {

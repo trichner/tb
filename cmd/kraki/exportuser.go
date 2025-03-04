@@ -6,8 +6,8 @@ import (
 	"fmt"
 
 	"github.com/trichner/oauthflows"
-	"github.com/trichner/toolbox/pkg/directory"
-	vault2 "github.com/trichner/toolbox/pkg/vault"
+	"github.com/trichner/tb/pkg/directory"
+	vault2 "github.com/trichner/tb/pkg/vault"
 )
 
 func exportUser(email string, resources []ExportResource) error {

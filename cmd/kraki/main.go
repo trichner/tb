@@ -11,7 +11,7 @@ import (
 
 	"github.com/alecthomas/kong"
 	"github.com/trichner/oauthflows"
-	"github.com/trichner/toolbox/pkg/directory"
+	"github.com/trichner/tb/pkg/directory"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 	admin "google.golang.org/api/admin/directory/v1"

@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/trichner/oauthflows"
-	"github.com/trichner/toolbox/pkg/directory"
+	"github.com/trichner/tb/pkg/directory"
 )
 
 func deleteUser(email string) error {

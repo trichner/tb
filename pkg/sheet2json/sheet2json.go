@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/trichner/toolbox/pkg/sheets"
+	"github.com/trichner/tb/pkg/sheets"
 )
 
 func ReadFromSheet(ctx context.Context, spreadsheetId string, sheetId int64, w io.Writer) error {

@@ -2,20 +2,30 @@ package main
 
 import (
 	"context"
+	"log/slog"
 	"os"
+	"time"
 
-	"github.com/trichner/toolbox/cmd/csv2json"
-	"github.com/trichner/toolbox/cmd/sheet2json"
-	"github.com/trichner/toolbox/pkg/cmdreg"
+	"github.com/lmittmann/tint"
 
-	"github.com/trichner/toolbox/cmd/sql2json"
+	"github.com/trichner/tb/cmd/csv2json"
+	"github.com/trichner/tb/cmd/sheet2json"
+	"github.com/trichner/tb/pkg/cmdreg"
 
-	"github.com/trichner/toolbox/cmd/jiracli"
-	"github.com/trichner/toolbox/cmd/json2sheet"
-	"github.com/trichner/toolbox/cmd/kraki"
+	"github.com/trichner/tb/cmd/sql2json"
+
+	"github.com/trichner/tb/cmd/jiracli"
+	"github.com/trichner/tb/cmd/json2sheet"
+	"github.com/trichner/tb/cmd/kraki"
 )
 
 func main() {
+	tintOpts := &tint.Options{
+		Level:      new(slog.LevelVar),
+		TimeFormat: time.TimeOnly,
+	}
+	slog.SetDefault(slog.New(tint.NewHandler(os.Stderr, tintOpts)))
+
 	r := cmdreg.New(cmdreg.WithProgramName("tb"))
 
 	r.RegisterFunc("csv2json", csv2json.Exec)

@@ -3,7 +3,7 @@ package jira
 import (
 	"fmt"
 
-	"github.com/trichner/toolbox/pkg/jira/credentials"
+	"github.com/trichner/tb/pkg/jira/credentials"
 	gojira "gopkg.in/andygrunwald/go-jira.v1"
 )
 

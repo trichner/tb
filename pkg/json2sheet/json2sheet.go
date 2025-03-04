@@ -7,7 +7,7 @@ import (
 	"io"
 	"net/url"
 
-	"github.com/trichner/toolbox/pkg/sheets"
+	"github.com/trichner/tb/pkg/sheets"
 )
 
 const (
@@ -25,7 +25,6 @@ type SheetAppender interface {
 }
 
 func UpdateSheet(ctx context.Context, spreadsheetUrl string, r io.Reader) (*url.URL, error) {
-
 	svc, err := sheets.NewSheetService(ctx)
 	if err != nil {
 		return nil, err
@@ -55,7 +54,6 @@ func UpdateSheet(ctx context.Context, spreadsheetUrl string, r io.Reader) (*url.
 }
 
 func WriteToNewSheet(ctx context.Context, r io.Reader) (*url.URL, error) {
-
 	svc, err := sheets.NewSheetService(ctx)
 	if err != nil {
 		return nil, err

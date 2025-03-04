@@ -6,7 +6,10 @@ import (
 	zk "github.com/zalando/go-keyring"
 )
 
-var ErrNotFound = errors.New("secret not found in keyring")
+var (
+	ErrNotFound = errors.New("secret not found in keyring")
+	ErrTooBig   = errors.New("secret too big for keyring")
+)
 
 type Item struct {
 	Secret string
@@ -21,7 +24,15 @@ func Open(service string) (*Ring, error) {
 }
 
 func (r *Ring) Put(name string, item *Item) error {
-	return zk.Set(r.serviceName, name, item.Secret)
+	if item == nil {
+		return zk.Delete(r.serviceName, name)
+	}
+
+	err := zk.Set(r.serviceName, name, item.Secret)
+	if errors.Is(err, zk.ErrSetDataTooBig) {
+		return ErrTooBig
+	}
+	return err
 }
 
 func (r *Ring) Get(name string) (*Item, error) {

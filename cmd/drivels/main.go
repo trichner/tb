@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/trichner/toolbox/pkg/gdrive"
+	"github.com/trichner/tb/pkg/gdrive"
 )
 
 func main() {

@@ -1,8 +1,8 @@
 
 
-.PHONY: install tidy build dist fmt
+.PHONY: install tidy build dist format
 
-build: tidy fmt
+build: tidy format
 	@go build ./...
 
 install: tidy
@@ -15,5 +15,5 @@ tidy:
 	@go get
 	@go mod tidy
 
-fmt:
+format:
 	@gofumpt -w .

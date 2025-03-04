@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	c2j "github.com/trichner/toolbox/pkg/csv2json"
+	c2j "github.com/trichner/tb/pkg/csv2json"
 )
 
 func Exec(ctx context.Context, args []string) {

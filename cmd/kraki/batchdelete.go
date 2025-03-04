@@ -9,7 +9,7 @@ import (
 	"strings"
 
 	"github.com/trichner/oauthflows"
-	"github.com/trichner/toolbox/pkg/directory"
+	"github.com/trichner/tb/pkg/directory"
 )
 
 func batchDelete(filename string) error {

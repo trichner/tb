@@ -9,7 +9,7 @@ import (
 
 	"github.com/alecthomas/kong"
 
-	"github.com/trichner/toolbox/pkg/json2sheet"
+	"github.com/trichner/tb/pkg/json2sheet"
 )
 
 var cli struct {

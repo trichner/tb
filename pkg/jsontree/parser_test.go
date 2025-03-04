@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/trichner/toolbox/pkg/jsontree/lexer"
+	"github.com/trichner/tb/pkg/jsontree/lexer"
 )
 
 func TestParse(t *testing.T) {

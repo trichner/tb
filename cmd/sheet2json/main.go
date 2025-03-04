@@ -12,7 +12,7 @@ import (
 	"github.com/alecthomas/kong"
 	"github.com/posener/complete/v2"
 	"github.com/posener/complete/v2/predict"
-	"github.com/trichner/toolbox/pkg/sheet2json"
+	"github.com/trichner/tb/pkg/sheet2json"
 )
 
 var cli struct {

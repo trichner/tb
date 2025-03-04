@@ -7,7 +7,7 @@ import (
 	"os"
 	"sort"
 
-	"github.com/trichner/toolbox/pkg/sheets"
+	"github.com/trichner/tb/pkg/sheets"
 )
 
 func main() {

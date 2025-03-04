@@ -18,7 +18,7 @@ import (
 	"cloud.google.com/go/storage"
 
 	"github.com/trichner/oauthflows"
-	vault2 "github.com/trichner/toolbox/pkg/vault"
+	vault2 "github.com/trichner/tb/pkg/vault"
 	"golang.org/x/oauth2"
 	"google.golang.org/api/option"
 )
