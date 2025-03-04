@@ -14,7 +14,7 @@ func TestNewJiraService(t *testing.T) {
 	creds, err := credentials2.FindCredentials()
 	assert.NoError(t, err)
 
-	svc, err := NewJiraService(creds.Username, creds.Token)
+	svc, err := NewJiraService("https://example.com", creds.Username, creds.Token)
 	assert.NoError(t, err)
 
 	issue, err := svc.GetByKey("ARC-119")
