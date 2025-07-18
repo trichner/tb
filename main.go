@@ -6,6 +6,8 @@ import (
 	"os"
 	"time"
 
+	"github.com/trichner/tb/cmd/tags"
+
 	"github.com/lmittmann/tint"
 
 	"github.com/trichner/tb/cmd/csv2json"
@@ -34,6 +36,7 @@ func main() {
 	r.RegisterFunc("kraki", kraki.Exec)
 	r.RegisterFunc("sheet2json", sheet2json.Exec, cmdreg.WithCompletion(sheet2json.Completions()))
 	r.RegisterFunc("sql2json", sql2json.Exec)
+	r.RegisterFunc("tag", tags.Exec)
 
 	r.RegisterFunc("help", help(r))
 
